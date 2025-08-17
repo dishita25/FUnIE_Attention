@@ -6,7 +6,7 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from attention import SpatioChannelAttention  
+from nets.attention import SpatioChannelAttention  
 
 
 class UNetDown(nn.Module):
