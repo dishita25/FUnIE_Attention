@@ -26,7 +26,7 @@ parser.add_argument("--data_dir", type=str, default="/kaggle/input/euvp-dataset/
 parser.add_argument("--sample_dir", type=str, default="/kaggle/working/FUnIE_Attention/data/output/")
 parser.add_argument("--enhanced_only", type=str, default="/kaggle/working/FUnIE_Attention/data/enhanced_only/")
 parser.add_argument("--model_name", type=str, default="funiegan") # or "ugan"
-parser.add_argument("--model_path", type=str, default="/kaggle/working/checkpoints/FunieGAN/EUVP/generator_69.pth")
+parser.add_argument("--model_path", type=str, default="/kaggle/working/FUnIE_Attention/checkpoints/FunieGAN/EUVP/generator_69.pth")
 opt = parser.parse_args()
 
 ## checks
