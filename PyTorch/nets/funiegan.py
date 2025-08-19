@@ -6,8 +6,7 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from nets.attention import SpatioChannelAttention  
-
+from nets.attention import SpatioChannelAttention 
 
 class UNetDown(nn.Module):
     def __init__(self, in_size, out_size, bn=True):
@@ -72,13 +71,13 @@ class GeneratorFunieGAN(nn.Module):
         d2 = self.down2(d1)
         d2_attention = self.sca_128(d2)
         
-        d3 = self.down3(d2)
+        d3 = self.down3(d2_attention)
         d3_attention = self.sca_256_1(d3)
         
-        d4 = self.down4(d3)
+        d4 = self.down4(d3_attention)
         d4_attention = self.sca_256_2(d4)
         
-        d5 = self.down5(d4)
+        d5 = self.down5(d4_attention)
         d5_attention = self.sca_256_3(d5)
         
         u1 = self.up1(d5_attention, d4_attention)
